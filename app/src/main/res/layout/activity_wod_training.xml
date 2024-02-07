@@ -41,25 +41,4 @@
         app:layout_constraintStart_toEndOf="@id/textViewTitle"
         app:layout_constraintTop_toTopOf="@id/textViewTitle"
         app:srcCompat="@drawable/runlogo" />
-    <!--Card choix run-->
-   <com.example.wodrun.MenuEntryView
-       android:id="@+id/menuEntryRun"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       app:layout_constraintBottom_toTopOf="@+id/menuEntryCrossfit"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
-       app:layout_constraintWidth_percent="0.7" />
-    <!--Card choix crossfit-->
-   <com.example.wodrun.MenuEntryView
-       android:id="@+id/menuEntryCrossfit"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/menuEntryRun"
-       app:layout_constraintWidth_percent="0.7" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

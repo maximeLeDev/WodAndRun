@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!--Start Color Gradient Is White-->
+    <color name="endGradient">#594747</color>
 </resources>

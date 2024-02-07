@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Wod&amp;Run</string>
     <string name="wod_run"><![CDATA[Wod & Run]]></string>
+    <string name="run">Run Training</string>
+    <string name="wod">Wod Training</string>
 </resources>
