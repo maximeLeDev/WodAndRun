@@ -8,8 +8,6 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import kotlin.reflect.KClass
 
 class MenuEntryView(context : Context, attrs: AttributeSet) : FrameLayout(context, attrs) {
 

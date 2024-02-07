@@ -14,8 +14,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val appTitle = findViewById<TitleView>(R.id.appTitle)
+        appTitle.changeImageLeft(R.drawable.crossfitlogo)
+        appTitle.changeImageRigth(R.drawable.runlogo)
+        appTitle.changeText(R.string.app_name)
+
         val menuEntryRun = findViewById<MenuEntryView>(R.id.menuEntryRun)
-        menuEntryRun.destination = WodTrainingActivity::class.java;
+        menuEntryRun.destination = RunTrainingActivity::class.java;
         menuEntryRun.changeImage(R.drawable.pisteathletisme)
         menuEntryRun.changeText(R.string.run)
 
@@ -23,6 +28,5 @@ class MainActivity : AppCompatActivity() {
         menuEntryCrossfit.destination = WodTrainingActivity::class.java;
         menuEntryCrossfit.changeImage(R.drawable.sallecrossfit)
         menuEntryCrossfit.changeText(R.string.wod)
-
     }
 }

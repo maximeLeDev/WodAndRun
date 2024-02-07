@@ -6,41 +6,15 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     tools:context=".MainActivity">
-    <!--Balise de Titre-->
-    <TextView
-        android:id="@+id/textViewTitle"
+    <!--Layout de Titre-->
+    <com.example.wodrun.TitleView
+        android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/audiowide"
-        android:textColor="@color/black"
-        android:textSize="32sp"
-        android:text="@string/wod_run"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <!--Logo Crossfit-->
-    <ImageView
-        android:id="@+id/imageViewCrossfitLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="Logo Crossfit"
-        app:layout_constraintBottom_toBottomOf="@id/textViewTitle"
-        app:layout_constraintEnd_toStartOf="@id/textViewTitle"
-        app:layout_constraintTop_toTopOf="@id/textViewTitle"
-        app:srcCompat="@drawable/crossfitlogo" />
-    <!--Logo Run-->
-    <ImageView
-        android:id="@+id/imageViewRunLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="Logo Run"
-        app:layout_constraintBottom_toBottomOf="@id/textViewTitle"
-        app:layout_constraintStart_toEndOf="@id/textViewTitle"
-        app:layout_constraintTop_toTopOf="@id/textViewTitle"
-        app:srcCompat="@drawable/runlogo" />
+        app:layout_constraintTop_toTopOf="parent"/>
     <!--Card choix run-->
    <com.example.wodrun.MenuEntryView
        android:id="@+id/menuEntryRun"
@@ -49,7 +23,7 @@
        app:layout_constraintBottom_toTopOf="@+id/menuEntryCrossfit"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+       app:layout_constraintTop_toBottomOf="@+id/appTitle"
        app:layout_constraintWidth_percent="0.7" />
     <!--Card choix crossfit-->
    <com.example.wodrun.MenuEntryView
