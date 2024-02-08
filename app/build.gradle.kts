@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    /*ajout Room*/
+    kotlin("kapt")
+    /*fin ajout Room*/
 }
 
 android {
@@ -50,4 +53,11 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     implementation("com.squareup.picasso:picasso:2.8")
     /*fin ajout web service*/
+    /*ajout Room*/
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    /*fin ajout Room*/
 }
