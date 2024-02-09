@@ -3,8 +3,13 @@ package com.example.wodrun
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.ListView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.room.Room
+import com.example.myapplication.SQL.PRDao
+import com.example.wodrun.SQL.AppDatabase
 import com.example.wodrun.model.Exo
 import com.example.wodrun.service.ExosListAdapter
 import kotlinx.coroutines.Dispatchers
@@ -12,6 +17,9 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class WodTrainingActivity : AppCompatActivity() {
+
+    lateinit var prDao : PRDao
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wod_training)
@@ -20,6 +28,12 @@ class WodTrainingActivity : AppCompatActivity() {
         screenTitle.changeImageLeft(R.drawable.crossfitlogo)
         screenTitle.changeImageRigth(R.drawable.crossfitlogo)
         screenTitle.changeText(R.string.wod)
+
+        val db = Room.databaseBuilder(
+            this,
+            AppDatabase::class.java, "database-name"
+        ).build()
+        prDao = db.prDao()
 
         executeCall()
     }
