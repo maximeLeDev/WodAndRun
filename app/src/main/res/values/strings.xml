@@ -3,4 +3,5 @@
     <string name="wod_run"><![CDATA[Wod & Run]]></string>
     <string name="run">Run Training</string>
     <string name="wod">Wod Training</string>
+    <string name="my_position">My Position</string>
 </resources>

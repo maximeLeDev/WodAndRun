@@ -49,28 +49,28 @@ class ExosListAdapter(private val parent: WodTrainingActivity, private val exos:
         }
         val editPR = listItemView.findViewById<ImageView>(R.id.exoEditPR)
         editPR.setOnClickListener{
-            showDialog(context, currentExo.name,currentExo.id) { exoId, newPR ->
+            showDialog(context, currentExo.name,currentExo) { exo, newPR ->
                 // Enregistrer le PR
-                Log.d("ExosList", newPR + exoId)
-                registerPr(context, exoId, newPR, listItemView)
+                //Log.d("ExosList", newPR + exo)//pour test
+                registerPr(context, exo, newPR, listItemView)
 
             }
         }
         affichePr(currentExo.id!!,listItemView)
         return listItemView
     }
-    fun registerPr(context: Context, selectedExercice: String, newPr: String, listItemView: View){
+    fun registerPr(context: Context, selectedExercice: Exo, newPr: String, listItemView: View){
         GlobalScope.launch(Dispatchers.Main){
             parent.prDao.insertAll(
-                PR(0, selectedExercice, newPr)
+                PR(0, selectedExercice.id!!, newPr)
             )
             Toast.makeText(
                 context,
-                "Nouveau pr : $newPr enregistré",
+                "New PR Register for ${selectedExercice.name} : $newPr",
                 Toast.LENGTH_SHORT
             ).show()
         }
-        affichePr(selectedExercice,listItemView)
+        affichePr(selectedExercice.id!!,listItemView)
     }
 
     fun affichePr(selectedExercice: String, listItemView: View){

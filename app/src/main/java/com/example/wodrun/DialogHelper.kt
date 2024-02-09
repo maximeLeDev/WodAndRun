@@ -4,8 +4,9 @@ import android.content.Context
 import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import com.example.wodrun.model.Exo
 
-fun showDialog(context: Context, exoName: String?, exoID: String?, callback: (String, String) -> Unit) {
+fun showDialog(context: Context, exoName: String?, exo: Exo?, callback: (Exo, String) -> Unit) {
     val inputText = EditText(context)
     AlertDialog.Builder(context)
         .setTitle(exoName)
@@ -13,11 +14,11 @@ fun showDialog(context: Context, exoName: String?, exoID: String?, callback: (St
         .setPositiveButton("OK"){ dialog, _ ->
             //take inputText val in newPR
             val newPR = inputText.text.toString()
-            callback(exoID!!,newPR)
+            callback(exo!!,newPR)
             //Close alertDialog
             dialog.dismiss()
         }
-        .setNegativeButton("Pas OK"){ dialog, _ ->
+        .setNegativeButton("Not OK"){ dialog, _ ->
             //Close alertDialog without instruction
             dialog.dismiss()
         }

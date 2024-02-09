@@ -78,7 +78,7 @@ class WodTrainingActivity : AppCompatActivity() {
             // Gérer le cas où exosList est null (par exemple, si les données n'ont pas encore été récupérées)
             Toast.makeText(
                 this@WodTrainingActivity,
-                "Les données ne sont pas encore chargées",
+                "Data was not available now",
                 Toast.LENGTH_LONG
             ).show()
         }
