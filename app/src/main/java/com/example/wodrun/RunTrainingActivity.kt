@@ -76,20 +76,25 @@ class RunTrainingActivity : AppCompatActivity() {
     }
 
     private fun showMarkerDialog(p: GeoPoint?) {
-        val inputTextDescription = EditText(this)
+        val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_add_marker, null)
+        val kmEditText = dialogView.findViewById<EditText>(R.id.kmEditText)
+        val timeEditText = dialogView.findViewById<EditText>(R.id.timeEditText)
+
         val alertDialog = AlertDialog.Builder(this)
-            .setTitle("Ajouter un marqueur")
-            .setView(inputTextDescription)
-            .setPositiveButton("Ajouter") { dialog, _ ->
-                val title = "Run the ${GlobalVariables.date}"
-                val description = inputTextDescription.text.toString()
+            .setTitle("Add parcours")
+            .setView(dialogView)
+            .setPositiveButton("Add") { dialog, _ ->
+                val title = "Date : ${GlobalVariables.date}"
+                val description = "Kilometers : ${kmEditText.text.toString()} " +
+                        "Time : ${timeEditText.text.toString()}"
                 addMarker(p, title, description)
                 dialog.dismiss()
             }
-            .setNegativeButton("Annuler") { dialog, _ ->
+            .setNegativeButton("Return") { dialog, _ ->
                 dialog.dismiss()
             }
             .create()
+
         alertDialog.show()
     }
 

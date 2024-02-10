@@ -4,4 +4,6 @@
     <string name="run">Run Training</string>
     <string name="wod">Wod Training</string>
     <string name="my_position">My Position</string>
+    <string name="how_many_kilometers">How many kilometers?</string>
+    <string name="time">Time?</string>
 </resources>
