@@ -10,5 +10,6 @@ data class runPoint(
     @ColumnInfo(name = "longitudeRunPoint") val longitudeRunPoint: Double,
     @ColumnInfo(name = "latitudeRunPoint") val latitudeRunPoint: Double,
     @ColumnInfo(name = "titleRunPoint") val titleRunPoint: String,
-    @ColumnInfo(name = "descriptionRunPoint") val descriptionRunPoint: String
+    @ColumnInfo(name = "descriptionRunPoint") val descriptionRunPoint: String,
+    @ColumnInfo(name = "subDescriptionRunPoint") val subDescriptionRunPoint: String
 )
