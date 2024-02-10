@@ -1,15 +1,13 @@
 package com.example.wodrun
 
+import GlobalVariables
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageView
 import android.widget.ListView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.room.Room
 import com.example.myapplication.SQL.PRDao
-import com.example.wodrun.SQL.AppDatabase
 import com.example.wodrun.model.Exo
 import com.example.wodrun.service.ExosListAdapter
 import kotlinx.coroutines.Dispatchers
@@ -29,11 +27,7 @@ class WodTrainingActivity : AppCompatActivity() {
         screenTitle.changeImageRigth(R.drawable.crossfitlogo)
         screenTitle.changeText(R.string.wod)
 
-        val db = Room.databaseBuilder(
-            this,
-            AppDatabase::class.java, "database-name"
-        ).build()
-        prDao = db.prDao()
+        prDao = MainActivity.db.prDao()
 
         executeCall()
     }
@@ -64,7 +58,6 @@ class WodTrainingActivity : AppCompatActivity() {
     }
     private fun updateListView() {
         // Vérifier si exosList est non null
-        Log.d("ExosList", exosList.toString())
         if (exosList != null) {
             // Créer un adaptateur pour la ListView avec les données de exosList
             val adapter = ExosListAdapter(this@WodTrainingActivity, exosList!!)

@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.room.Room
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
@@ -22,6 +23,10 @@ import com.google.android.gms.location.Priority
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        lateinit var db: AppDatabase
+            private set
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -47,6 +52,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
         /*FIN MAP + GPS*/
+
+        /*Construction de la base de données*/
+        db = Room.databaseBuilder(
+            this,
+            AppDatabase::class.java, "database-name"
+        ).build()
+        /*Fin construction de la base de données*/
 
         val appTitle = findViewById<TitleView>(R.id.appTitle)
         appTitle.changeImageLeft(R.drawable.crossfitlogo)

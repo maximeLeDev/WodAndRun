@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:gravity="center"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="275dp"
@@ -22,7 +22,7 @@
             android:id="@+id/imageMenuEntry"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="Image de meny"
+            android:contentDescription="@string/menu_picture"
             android:scaleType="centerCrop"
             tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -36,6 +36,6 @@
         android:fontFamily="@font/audiowide"
         android:textColor="@color/black"
         android:textSize="24sp"
-        tools:text="Activity title"/>
+        tools:text="Activity title" />
 
 </LinearLayout>

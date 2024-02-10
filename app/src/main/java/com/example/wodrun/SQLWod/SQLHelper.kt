@@ -1,4 +1,4 @@
-package com.example.myapplication
+/*package com.example.myapplication
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -25,4 +25,4 @@ class SQLHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null
         const val DATABASE_VERSION = 1
         const val DATABASE_NAME = "FeedReader.db"
     }
-}
+}*/

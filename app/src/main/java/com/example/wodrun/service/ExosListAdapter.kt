@@ -3,7 +3,6 @@ package com.example.wodrun.service
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.room.Room
 import com.example.wodrun.R
-import com.example.wodrun.SQL.AppDatabase
 import com.example.wodrun.SQLWod.PR
 import com.example.wodrun.WodTrainingActivity
 import com.example.wodrun.model.Exo
