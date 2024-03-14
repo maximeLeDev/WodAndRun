@@ -50,7 +50,7 @@ class RunTrainingActivity : AppCompatActivity() {
         mapView = findViewById<MapView>(R.id.runMap)
         mapView.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE)
         mapView.setMultiTouchControls(true)
-
+        mapView.setBuiltInZoomControls(false)
         Configuration.getInstance().setUserAgentValue(getPackageName())
         val mapController = mapView.controller
         /*Zoom de la map*/
